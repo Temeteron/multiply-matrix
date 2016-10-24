@@ -1,31 +1,31 @@
 #include "libraries.h"
 
-int result[SIZE][SIZE];
+float result[SIZE][SIZE];
 
-void calc1 (int a[SIZE][SIZE], int b[SIZE][SIZE]);
-void calc2 (int a[SIZE][SIZE], int b[SIZE][SIZE]);
-void calc4 (int a[SIZE][SIZE], int b[SIZE][SIZE]);
-void calc8 (int a[SIZE][SIZE], int b[SIZE][SIZE]);
-void calc16 (int a[SIZE][SIZE], int b[SIZE][SIZE]);
-void calc32 (int a[SIZE][SIZE], int b[SIZE][SIZE]);
+void calc1 (float a[SIZE][SIZE], float b[SIZE][SIZE]);
+void calc2 (float a[SIZE][SIZE], float b[SIZE][SIZE]);
+void calc4 (float a[SIZE][SIZE], float b[SIZE][SIZE]);
+void calc8 (float a[SIZE][SIZE], float b[SIZE][SIZE]);
+void calc16 (float a[SIZE][SIZE], float b[SIZE][SIZE]);
+void calc32 (float a[SIZE][SIZE], float b[SIZE][SIZE]);
 
 // n=512 και k=1, 2, 4, 8, 16
 int main (int argc, char *argv[]) {
-	int a[SIZE][SIZE], b[SIZE][SIZE];
+	float a[SIZE][SIZE], b[SIZE][SIZE];
 	int i, j;
 	
 
 	// Initializing all elements of 'a' matrix
     for (i = 0; i < SIZE; ++i) {
         for( j = 0; j < SIZE; ++j) {
-            a[i][j] = rand();
+            a[i][j] = (float)rand();
         }
     }
 
     // Initializing all elements of 'b' matrix
     for (i = 0; i < SIZE; ++i) {
         for( j = 0; j < SIZE; ++j) {
-            b[i][j] = rand();
+            b[i][j] = (float)rand();
         }
     }
 
@@ -51,7 +51,7 @@ int main (int argc, char *argv[]) {
 }
 
 // STEP == 1
-void calc1 (int a[SIZE][SIZE], int b[SIZE][SIZE]) {
+void calc1 (float a[SIZE][SIZE], float b[SIZE][SIZE]) {
 	clock_t begin = clock();
 	int i, j, k;
 
@@ -69,7 +69,7 @@ void calc1 (int a[SIZE][SIZE], int b[SIZE][SIZE]) {
 }
 
 // STEP == 2
-void calc2 (int a[SIZE][SIZE], int b[SIZE][SIZE]) {
+void calc2 (float a[SIZE][SIZE], float b[SIZE][SIZE]) {
 	clock_t begin = clock();
 	int temp, s = 2;
 
@@ -93,7 +93,7 @@ void calc2 (int a[SIZE][SIZE], int b[SIZE][SIZE]) {
 }
 
 // STEP == 4
-void calc4 (int a[SIZE][SIZE], int b[SIZE][SIZE]) {
+void calc4 (float a[SIZE][SIZE], float b[SIZE][SIZE]) {
 	clock_t begin = clock();
 	int temp, s = 4;
 
@@ -117,7 +117,7 @@ void calc4 (int a[SIZE][SIZE], int b[SIZE][SIZE]) {
 }
 
 // STEP == 8
-void calc8 (int a[SIZE][SIZE], int b[SIZE][SIZE]) {
+void calc8 (float a[SIZE][SIZE], float b[SIZE][SIZE]) {
 	clock_t begin = clock();
 	int temp, s = 8;
 
@@ -141,7 +141,7 @@ void calc8 (int a[SIZE][SIZE], int b[SIZE][SIZE]) {
 }
 
 // STEP == 16
-void calc16 (int a[SIZE][SIZE], int b[SIZE][SIZE]) {
+void calc16 (float a[SIZE][SIZE], float b[SIZE][SIZE]) {
 	clock_t begin = clock();
 	int temp, s = 16;
 
@@ -165,7 +165,7 @@ void calc16 (int a[SIZE][SIZE], int b[SIZE][SIZE]) {
 }
 
 // STEP == 32
-void calc32 (int a[SIZE][SIZE], int b[SIZE][SIZE]) {
+void calc32 (float a[SIZE][SIZE], float b[SIZE][SIZE]) {
 	clock_t begin = clock();
 	int temp, s = 32;
 
