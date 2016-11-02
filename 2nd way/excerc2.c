@@ -1,27 +1,27 @@
 #include "libraries.h"
 
-int result[SIZE][SIZE];
+float result[SIZE][SIZE];
 
 //void calc1 (int a[SIZE][SIZE], int b[SIZE][SIZE]);
-void calcK (int a[SIZE][SIZE], int b[SIZE][SIZE],int step);
+void calcK (float a[SIZE][SIZE], float b[SIZE][SIZE],int step);
 
 // n=512 και k=1, 2, 4, 8, 16
 int main (int argc, char *argv[]) {
-	int a[SIZE][SIZE], b[SIZE][SIZE];
+	float a[SIZE][SIZE], b[SIZE][SIZE];
 	int i, j;
 	
 
 	// Initializing all elements of 'a' matrix
     for (i = 0; i < SIZE; ++i) {
         for( j = 0; j < SIZE; ++j) {
-            a[i][j] =rand();
+            a[i][j] = (float)rand();
         }
     }
 
     // Initializing all elements of 'b' matrix
     for (i = 0; i < SIZE; ++i) {
         for( j = 0; j < SIZE; ++j) {
-            b[i][j] =rand();
+            b[i][j] = (float)rand();
         }
     }
 
@@ -60,7 +60,7 @@ int main (int argc, char *argv[]) {
 
 //For s=1 is normal multiplication because each chunk is (1*SIZE)*(SIZE*1) calculating 1 element blocks of C
 // STEP s=1,2,4,8,16,32 For each s*SIZE submatrix A multiply it with every SIZE*s chunk of B to produce the s*s block of C (row-major production)
-void calcK (int a[SIZE][SIZE], int b[SIZE][SIZE],int step) {
+void calcK (float a[SIZE][SIZE], float b[SIZE][SIZE],int step) {
 	clock_t begin,end;
 	int  s,ca,cb,i,j,k;
 	s=step;
