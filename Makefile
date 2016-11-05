@@ -1,5 +1,5 @@
-TARGET = prog
-PROGRAM_NAME= prog
+TARGET = prog.out
+PROGRAM_NAME = prog.out
 LIBS = -lm
 CC = gcc
 CFLAGS = -g -Wall -std=c99
